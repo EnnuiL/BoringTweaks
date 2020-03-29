@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "io.github.joaoh1.boringtweaks.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "BipedEntityModelMixin",
+    "EyesFeatureRendererMixin",
+    "SoundSliderWidgetMixin",
+    "StriderEntityRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

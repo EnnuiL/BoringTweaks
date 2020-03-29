@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "boringtweaks",
+  "version": "${version}",
+  "name": "Boring Tweaks",
+  "description": "A collection of toggleable and configurable tweaks. The only common theme between them is that they are all focused on the client-side.",
+  "authors": [
+    "joaoh1"
+  ],
+  "contact": {
+    "issues": "https://github.com/joaoh1/BoringTweaks/issues",
+    "sources": "https://github.com/joaoh1/BoringTweaks"
+  },
+  "license": "MIT",
+  "icon": "assets/boringtweaks/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["io.github.joaoh1.boringtweaks.BoringTweaksMod"],
+    "modmenu": ["io.github.joaoh1.boringtweaks.config.modmenu.BoringTweaksConfigModMenuImpl"]
+  },
+  "mixins": ["boringtweaks.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.7.8",
+    "fabric": ">=0.5.0"
+  }
+}
