@@ -58,13 +58,6 @@ public class BoringTweaksConfig {
 			.atMost(100)
 			.finish()
 			.build();
-	
-	public static ConfigValue<Boolean> striderEasterEgg = ConfigValue
-			.builder("strider_easter_egg", Boolean.class)
-			.withComment("Adds an easter egg to the Strider mob. It's cosmetic and requires player intervention.")
-			.withParent(node)
-			.withDefaultValue(true)
-			.build();
 
 	public static void loadJanksonConfig() {
 		if (Files.exists(Paths.get("./config/boringtweaks.json5"))) {

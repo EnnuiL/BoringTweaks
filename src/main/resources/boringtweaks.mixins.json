@@ -5,8 +5,7 @@
   "client": [
     "BipedEntityModelMixin",
     "EyesFeatureRendererMixin",
-    "SoundSliderWidgetMixin",
-    "StriderEntityRendererMixin"
+    "SoundSliderWidgetMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,7 +1,7 @@
 package io.github.joaoh1.boringtweaks.mixin;
 
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.widget.OptionSliderWidget;
+import net.minecraft.client.gui.widget.SliderWidget;
 import net.minecraft.client.gui.widget.SoundSliderWidget;
 import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.client.sound.SoundManager;
@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import io.github.joaoh1.boringtweaks.config.BoringTweaksConfig;
 
 @Mixin(SoundSliderWidget.class)
-public abstract class SoundSliderWidgetMixin extends OptionSliderWidget {
+public abstract class SoundSliderWidgetMixin extends SliderWidget {
 	@SuppressWarnings("unused")
 	private final SoundCategory category;
 	private float setVolume = 0.0F;
