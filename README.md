@@ -6,7 +6,7 @@ Boring Tweaks is a mod that has a small collection of toggleable and configurabl
 
 ## Usage
 
-This mod is currently in alpha stages and therefore, you can only download this mod by [GitHub Releases](https://github.com/joaoh1/BoringTweaks/releases). However, if you are really interested on testing this mod, you can obtain this mod through [GitHub Packages](https://github.com/joaoh1/BoringTweaks/packages), but it's not recommended and it IS broken.
+You can download this mod either by [CurseForge](https://link) or [GitHub Releases](https://github.com/joaoh1/BoringTweaks/releases). If you are willing to test the latest changes, you can obtain the dev builds through [GitHub Packages](https://github.com/joaoh1/BoringTweaks/packages), but it's not recommended and it is broken.
 
 ## License
 
