@@ -4,13 +4,14 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import me.zeroeightsix.fiber.builder.ConfigNodeBuilder;
 import me.zeroeightsix.fiber.exception.FiberException;
 import me.zeroeightsix.fiber.serialization.JanksonSerializer;
 import me.zeroeightsix.fiber.tree.ConfigNode;
 import me.zeroeightsix.fiber.tree.ConfigValue;
 
 public class BoringTweaksConfig {
-	public static ConfigNode node = new ConfigNode();
+	public static ConfigNodeBuilder node = new ConfigNodeBuilder();
 	private static JanksonSerializer serializer = new JanksonSerializer();
 
 	public static ConfigValue<Boolean> fixBabyBipedEntitiysHat = ConfigValue
@@ -66,10 +67,12 @@ public class BoringTweaksConfig {
 			.withDefaultValue(true)
 			.build();
 
+	public static ConfigNode builtNode = node.build();
+
 	public static void loadJanksonConfig() {
 		if (Files.exists(Paths.get("./config/boringtweaks.json5"))) {
 			try {
-				serializer.deserialize(node, Files.newInputStream(Paths.get("./config/boringtweaks.json5")));
+				serializer.deserialize(builtNode, Files.newInputStream(Paths.get("./config/boringtweaks.json5")));
 			} catch (IOException | FiberException e) {
 				e.printStackTrace();
 			}
@@ -80,7 +83,7 @@ public class BoringTweaksConfig {
 
 	public static void saveJanksonConfig() {
 		try {
-			serializer.serialize(node, Files.newOutputStream(Paths.get("./config/boringtweaks.json5")));
+			serializer.serialize(builtNode, Files.newOutputStream(Paths.get("./config/boringtweaks.json5")));
 		} catch (FiberException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

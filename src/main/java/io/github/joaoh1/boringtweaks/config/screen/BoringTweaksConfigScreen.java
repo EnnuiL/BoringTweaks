@@ -6,7 +6,7 @@ import net.minecraft.client.gui.screen.Screen;
 
 public class BoringTweaksConfigScreen {
     public static Screen getConfigScreen(Screen currentScreen) {
-        return Fiber2Cloth.create(currentScreen, "boringtweaks", BoringTweaksConfig.node, "title.boringtweaks.config").setSaveRunnable(() -> {
+        return Fiber2Cloth.create(currentScreen, "boringtweaks", BoringTweaksConfig.builtNode, "title.boringtweaks.config").setSaveRunnable(() -> {
             BoringTweaksConfig.saveJanksonConfig();
         }).build().getScreen();
     }
