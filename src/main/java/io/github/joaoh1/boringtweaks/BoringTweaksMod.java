@@ -17,11 +17,11 @@ public class BoringTweaksMod implements ClientModInitializer {
 		BoringTweaksConfig.loadJanksonConfig();
 
 		ClientTickCallback.EVENT.register(e -> {
-			if (BoringTweaksConfig.changeVolumeWhileAway.getValue()) {
+			if (BoringTweaksConfig.changeMasterVolumeWhileAway.getValue()) {
 				if (!client.isWindowFocused() && client.options.pauseOnLostFocus && (!client.options.touchscreen || !client.mouse.wasRightButtonClicked())) {
 					if (!isClientAway && !client.isPaused()) {
 						originalMasterVolume = client.options.getSoundVolume(SoundCategory.MASTER);
-						volumeToSet = (float)BoringTweaksConfig.targetVolumeWhileAway.getValue() / 100.0F;
+						volumeToSet = (float)BoringTweaksConfig.targetMasterVolumeWhileAway.getValue() / 100.0F;
 						if (volumeToSet == 0.0F) volumeToSet = Float.MIN_VALUE;
 						client.options.setSoundVolume(SoundCategory.MASTER, volumeToSet);
 						isClientAway = true;

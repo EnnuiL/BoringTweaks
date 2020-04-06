@@ -36,11 +36,9 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	modImplementation "io.github.prospector:modmenu:${project.modmenu_version}"
 	implementation "me.zeroeightsix:fiber:${project.fiber_version}"
-	modApi "me.shedaniel.cloth:fiber2cloth:${project.fibertocloth_version}"
 	modApi "me.shedaniel.cloth:config-2:${project.cloth_config_version}"
 
 	include "me.zeroeightsix:fiber:${project.fiber_version}"
-	include "me.shedaniel.cloth:fiber2cloth:${project.fibertocloth_version}"
 	include "me.shedaniel.cloth:config-2:${project.cloth_config_version}"
 }
 
