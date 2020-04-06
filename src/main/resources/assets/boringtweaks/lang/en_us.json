@@ -1,7 +1,7 @@
 {
     "category.boringtweaks.general": "General",
-    "config.boringtweaks.fix_baby_biped_entity_hat_layer": "Fix Baby Biped Entity's Hat Layer",
-    "config.boringtweaks.fix_baby_biped_entity_hat_layer.tooltip": "Fixes a bug where baby biped entities (ex. Baby Zombies) didn't scale up their hat layer.",
+    "config.boringtweaks.fix_baby_biped_entitys_hat": "Fix Baby Biped Entity's Hat",
+    "config.boringtweaks.fix_baby_biped_entitys_hat.tooltip": "Fixes a bug where baby biped entities (ex. Baby Zombies) didn't scale up their hat layer.",
     "config.boringtweaks.hide_invisible_entity_eyes": "Hide Invisible Entity's Eyes",
     "config.boringtweaks.hide_invisible_entity_eyes.tooltip": "Hides entity eyes when they are invisible. The affected entities are determined by a list.",
     "config.boringtweaks.list_of_entities_with_hidden_eyes": "List of Entities with Hidden Eyes",
@@ -9,9 +9,9 @@
     "config.boringtweaks.change_sound_slider_behavior": "Change Sound Slider Behavior",
     "config.boringtweaks.change_sound_slider_behavior.tooltip": "Changes the sliders in the \"Sound and Music Options\" in order help setting the volume.",
     "config.boringtweaks.change_master_volume_while_away": "Change Master Volume while Away",
-    "config.boringtweaks.change_master_volume_while_away.tooltip": "When the Minecraft windows is focused away, the volume will be changed to a set value.",
+    "config.boringtweaks.change_master_volume_while_away.tooltip": "When the game's window is focused away, the master volume will be changed to a set value.",
     "config.boringtweaks.target_master_volume_while_away": "Target Master Volume while Away",
-    "config.boringtweaks.target_master_volume_while_away.tooltip": "The set value used by the \"Change Volume While Away\" tweak for the master volume.",
+    "config.boringtweaks.target_master_volume_while_away.tooltip": "The set value used by the \"Change Master Volume While Away\" tweak.",
     "config.boringtweaks.strider_easter_egg": "Strider Easter Egg",
     "config.boringtweaks.strider_easter_egg.tooltip": "Adds an easter egg to the Strider mob. It's cosmetic and requires player intervention.",
     "title.boringtweaks.config": "Boring Tweaks Settings"
