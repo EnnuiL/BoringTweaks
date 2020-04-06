@@ -24,7 +24,7 @@ public class BipedEntityModelMixin {
 	@SuppressWarnings("all")
 	@Inject(at = @At("HEAD"), method = "getHeadParts()Ljava/lang/Iterable;", cancellable = true)
 	protected Iterable<ModelPart> getHeadPartsWithHat(CallbackInfoReturnable info) {
-		if (BoringTweaksConfig.fixBabyBipedEntitiysHat.getValue()) {
+		if (BoringTweaksConfig.fixBabyBipedEntitysHat.getValue()) {
 			info.setReturnValue(ImmutableList.of(this.head, this.helmet));
 		}
 		return ImmutableList.of(this.head, this.helmet);

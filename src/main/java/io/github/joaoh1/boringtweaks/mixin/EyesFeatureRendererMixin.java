@@ -18,7 +18,7 @@ public abstract class EyesFeatureRendererMixin<T extends Entity> {
 	private void boringRender(MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, T entity, float limbAngle, float limbDistance, float tickDelta, float customAngle, float headYaw, float headPitch, CallbackInfo info) {
 		if (BoringTweaksConfig.hideInvisibleEntityEyes.getValue()) {
 			if (entity.isInvisible()) {
-				String[] hiddenEyesEntityList = BoringTweaksConfig.hiddenEyesEntityList.getValue();
+				String[] hiddenEyesEntityList = BoringTweaksConfig.listOfEntitiesWithHiddenEyes.getValue();
 				for (int i = 0; i < hiddenEyesEntityList.length; i++) {
 					if (entity.getType().getLootTableId().toString().equals(hiddenEyesEntityList[i])) {
 						info.cancel();

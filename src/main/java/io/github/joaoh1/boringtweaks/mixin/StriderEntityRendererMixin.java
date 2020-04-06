@@ -20,6 +20,7 @@ public abstract class StriderEntityRendererMixin extends MobEntityRenderer<Strid
     
     @Inject(method = "<init>(Lnet/minecraft/client/render/entity/EntityRenderDispatcher;)V", at = @At("TAIL"))
     private void init(CallbackInfo info) {
+        // The config toggle is handled there
         this.addFeature(new StriderSunglassesFeatureRenderer(this));
 	}
 }
