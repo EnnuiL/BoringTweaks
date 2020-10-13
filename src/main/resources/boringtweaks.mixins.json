@@ -4,9 +4,11 @@
   "compatibilityLevel": "JAVA_8",
   "client": [
     "BipedEntityModelMixin",
-    "EyesFeatureRendererMixin",
+    "DebugHudMixin",
+    "HeadFeatureRendererMixin",
     "SoundSliderWidgetMixin",
-    "StriderEntityRendererMixin"
+    "VillagerResemblingModelMixin",
+    "WorldRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

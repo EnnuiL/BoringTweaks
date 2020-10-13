@@ -2,69 +2,49 @@ package io.github.joaoh1.boringtweaks.config;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.Path;
 
-import me.zeroeightsix.fiber.builder.ConfigNodeBuilder;
-import me.zeroeightsix.fiber.exception.FiberException;
-import me.zeroeightsix.fiber.serialization.JanksonSerializer;
-import me.zeroeightsix.fiber.tree.ConfigNode;
-import me.zeroeightsix.fiber.tree.PropertyMirror;
+import io.github.fablabsmc.fablabs.api.fiber.v1.annotation.AnnotatedSettings;
+import io.github.fablabsmc.fablabs.api.fiber.v1.annotation.SettingNamingConvention;
+import io.github.fablabsmc.fablabs.api.fiber.v1.exception.FiberException;
+import io.github.fablabsmc.fablabs.api.fiber.v1.serialization.FiberSerialization;
+import io.github.fablabsmc.fablabs.api.fiber.v1.serialization.JanksonValueSerializer;
+import io.github.fablabsmc.fablabs.api.fiber.v1.tree.ConfigTree;
+import net.fabricmc.loader.api.FabricLoader;
 
+//The class responsible for loading and saving the config. Obviously not stolen from Ok Zoomer. *whistles*
 public class BoringTweaksConfig {
-	public static final PropertyMirror<Boolean> changeMasterVolumeWhileAway = new PropertyMirror<>();
-	public static final PropertyMirror<Integer> targetMasterVolumeWhileAway = new PropertyMirror<>();
-	public static final PropertyMirror<Boolean> changeSoundSliderBehavior = new PropertyMirror<>();
-	public static final PropertyMirror<Boolean> fixBabyBipedEntitysHat = new PropertyMirror<>();
-	public static final PropertyMirror<Boolean> hideInvisibleEntityEyes = new PropertyMirror<>();
-	public static final PropertyMirror<String[]> listOfEntitiesWithHiddenEyes = new PropertyMirror<>();
-	public static final PropertyMirror<Boolean> striderEasterEgg = new PropertyMirror<>();
-
-	public static final ConfigNode node = new ConfigNodeBuilder()
-		.beginValue("change_master_volume_while_away", false)
-			.withComment("When the game's window is focused away, the master volume will be changed to a set value.")
-		.finishValue(changeMasterVolumeWhileAway::mirror)
-		.beginValue("target_master_volume_while_away", 0)
-			.withComment("The set value used by the \"Change Master Volume While Away\" tweak.")
-			.beginConstraints()
-				.range(0, 100)
-			.finishConstraints()
-		.finishValue(targetMasterVolumeWhileAway::mirror)
-		.beginValue("change_sound_slider_behavior", false)
-			.withComment("Changes the sliders in the \"Sound and Music Options\" in order help setting the volume.")
-		.finishValue(changeSoundSliderBehavior::mirror)
-		.beginValue("fix_baby_biped_entitys_hat", true)
-			.withComment("Fixes a bug where baby biped entities (ex. Baby Zombies) didn't scale up their hat layer.")
-		.finishValue(fixBabyBipedEntitysHat::mirror)
-		.beginValue("hide_invisible_entity_eyes", true)
-			.withComment("Hides entity eyes when they are invisible. The affected entities are determined by a list.")
-		.finishValue(hideInvisibleEntityEyes::mirror)
-		.beginValue("list_of_entities_with_hidden_eyes", String[].class)
-			.withComment("The list of entities to be affected by the \"Hide Invisible Entity's Eyes\" tweak.")
-			.withDefaultValue(new String[]{"minecraft:entities/enderman", "minecraft:entities/phantom"})
-		.finishValue(listOfEntitiesWithHiddenEyes::mirror)
-		.beginValue("strider_easter_egg", true)
-			.withComment("Adds an easter egg to the Strider mob. It's cosmetic and requires player intervention.")
-		.finishValue(striderEasterEgg::mirror)
+	public static boolean isConfigLoaded = false;
+	public static final Path CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve("boringtweaks.json5");
+	private static final AnnotatedSettings ANNOTATED_SETTINGS = AnnotatedSettings.builder()
+		.useNamingConvention(SettingNamingConvention.SNAKE_CASE)
 		.build();
+	private static final BoringTweaksConfigPojo POJO = new BoringTweaksConfigPojo();
+	public static final ConfigTree TREE = ConfigTree.builder()
+		.applyFromPojo(POJO, ANNOTATED_SETTINGS)
+		.build();
+	
+	private static JanksonValueSerializer serializer = new JanksonValueSerializer(false);
 
-	private static JanksonSerializer serializer = new JanksonSerializer();
-
-	public static void loadJanksonConfig() {
-		if (Files.exists(Paths.get("./config/boringtweaks.json5"))) {
+	public static void loadModConfig() {
+		if (Files.exists(CONFIG_PATH)) {
 			try {
-				serializer.deserialize(node, Files.newInputStream(Paths.get("./config/boringtweaks.json5")));
+				ANNOTATED_SETTINGS.applyToNode(TREE, POJO);
+				FiberSerialization.deserialize(TREE, Files.newInputStream(CONFIG_PATH), serializer);
+				isConfigLoaded = true;
 			} catch (IOException | FiberException e) {
 				e.printStackTrace();
 			}
 		} else {
-			saveJanksonConfig();
+			saveModConfig();
+			isConfigLoaded = true;
 		}
 	}
 
-	public static void saveJanksonConfig() {
+	public static void saveModConfig() {
 		try {
-			System.out.println(node.getItems());
-			serializer.serialize(node, Files.newOutputStream(Paths.get("./config/boringtweaks.json5")));
+			ANNOTATED_SETTINGS.applyToNode(TREE, POJO);
+			FiberSerialization.serialize(TREE, Files.newOutputStream(CONFIG_PATH), serializer);
 		} catch (IOException | FiberException e) {
 			e.printStackTrace();
 		}

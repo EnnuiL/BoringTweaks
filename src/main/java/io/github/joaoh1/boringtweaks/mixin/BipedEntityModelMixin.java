@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import io.github.joaoh1.boringtweaks.config.BoringTweaksConfig;
+import io.github.joaoh1.boringtweaks.config.BoringTweaksConfigPojo;
 
 @Mixin(BipedEntityModel.class)
 public class BipedEntityModelMixin {
@@ -21,11 +21,10 @@ public class BipedEntityModelMixin {
 	@Shadow
 	public ModelPart helmet;
 	
-	@SuppressWarnings("all")
 	@Inject(at = @At("HEAD"), method = "getHeadParts()Ljava/lang/Iterable;", cancellable = true)
-	protected Iterable<ModelPart> getHeadPartsWithHat(CallbackInfoReturnable info) {
-		if (BoringTweaksConfig.fixBabyBipedEntitysHat.getValue()) {
-			info.setReturnValue(ImmutableList.of(this.head, this.helmet));
+	protected Iterable<ModelPart> getCompleteHeadParts(CallbackInfoReturnable<Iterable<ModelPart>> ci) {
+		if (BoringTweaksConfigPojo.featuresGroup.fixBabyHatLayer) {
+			ci.setReturnValue(ImmutableList.of(this.head, this.helmet));
 		}
 		return ImmutableList.of(this.head, this.helmet);
 	}
