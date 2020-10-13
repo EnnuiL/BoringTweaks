@@ -106,7 +106,7 @@ public class BoringTweaksConfigScreen {
         );
 
         values.addEntry(entryBuilder.startFloatField(new TranslatableText("config.boringtweaks.smooth_day_cycle_divisor"), BoringTweaksConfigPojo.valuesGroup.smoothDayCycleDivisor)
-            .setDefaultValue(16.0F)
+            .setDefaultValue(32.0F)
             .setMin(0.0F)
             .setSaveConsumer(value -> {
                 BoringTweaksConfigPojo.valuesGroup.smoothDayCycleDivisor = value;

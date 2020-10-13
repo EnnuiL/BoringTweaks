@@ -43,7 +43,7 @@ public class BoringTweaksConfigPojo {
 
 		@Setting.Constrain.Range(min = 0.0F)
 		@Setting(comment = "The divisor used by the \"Smooth Day Cycle\" tweak")
-		public float smoothDayCycleDivisor = 16.0F;
+		public float smoothDayCycleDivisor = 32.0F;
 
 		@Setting.Constrain.Range(min = 0.0F, max = 32.0F)
 		@Setting(comment = "The scale used by the \"Bigger Baby Villager Heads\" tweak")
