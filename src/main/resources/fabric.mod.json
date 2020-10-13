@@ -6,8 +6,9 @@
   "description": "A collection of client-side-only tweaks, powered by boredom. All the tweaks can be toggled or adjusted in the config screen.",
   "authors": ["joaoh1"],
   "contact": {
-    "homepage": "https://curseforge.com/",
-    "sources": "https://github.com/"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/boring-tweaks",
+    "issues": "https://github.com/joaoh1/BoringTweaks/issues",
+    "sources": "https://github.com/joaoh1/BoringTweaks"
   },
   "license": "MIT",
   "icon": "assets/boringtweaks/icon.png",
@@ -26,6 +27,6 @@
   "depends": {
     "fabricloader": ">=0.9.0",
     "fabric": ">=0.14.0",
-    "minecraft": ">=1.16.0"
+    "minecraft": ">=1.16.2"
   }
 }

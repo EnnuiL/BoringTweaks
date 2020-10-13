@@ -27,14 +27,12 @@ public class StriderSunglassesFeatureRenderer extends FeatureRenderer<StriderEnt
     @Override
     public void render(MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, StriderEntity entity, float limbAngle, float limbDistance, float tickDelta, float animationProgress, float headYaw, float headPitch) {
         if (BoringTweaksConfigPojo.featuresGroup.striderEasterEgg) {
-            if (!entity.isInvisible()) {
-                if (entity.hasCustomName()) {
-                    String striderName = entity.getCustomName().getString();
-                    if (striderName.equals("Dave")) {
-                        renderModel(this.getContextModel(), DAVE_SUNGLASSES_SKIN, matrices, vertexConsumers, light, entity, 1.0F, 1.0F, 1.0F);
-                    } else if (striderName.equals("Dirk")) {
-                        renderModel(this.getContextModel(), DIRK_SUNGLASSES_SKIN, matrices, vertexConsumers, light, entity, 1.0F, 1.0F, 1.0F);
-                    }
+            if (!entity.isInvisible() && entity.hasCustomName()) {
+                String striderName = entity.getCustomName().getString();
+                if (striderName.equals("Dave")) {
+                    renderModel(this.getContextModel(), DAVE_SUNGLASSES_SKIN, matrices, vertexConsumers, light, entity, 1.0F, 1.0F, 1.0F);
+                } else if (striderName.equals("Dirk")) {
+                    renderModel(this.getContextModel(), DIRK_SUNGLASSES_SKIN, matrices, vertexConsumers, light, entity, 1.0F, 1.0F, 1.0F);
                 }
             }
         }

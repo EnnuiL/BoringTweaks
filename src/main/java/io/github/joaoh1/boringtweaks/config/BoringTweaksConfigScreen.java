@@ -97,6 +97,7 @@ public class BoringTweaksConfigScreen {
 
         values.addEntry(entryBuilder.startFloatField(new TranslatableText("config.boringtweaks.reduced_volume_percentage"), BoringTweaksConfigPojo.valuesGroup.reducedVolumePercentage)
             .setDefaultValue(50.0F)
+            .setMin(0.0F)
             .setSaveConsumer(value -> {
                 BoringTweaksConfigPojo.valuesGroup.reducedVolumePercentage = value;
             })
@@ -104,17 +105,20 @@ public class BoringTweaksConfigScreen {
             .build()
         );
 
-        values.addEntry(entryBuilder.startFloatField(new TranslatableText("config.boringtweaks.smooth_day_cycle_multiplier"), BoringTweaksConfigPojo.valuesGroup.smoothDayCycleMultiplier)
-            .setDefaultValue(0.0625F)
+        values.addEntry(entryBuilder.startFloatField(new TranslatableText("config.boringtweaks.smooth_day_cycle_divisor"), BoringTweaksConfigPojo.valuesGroup.smoothDayCycleDivisor)
+            .setDefaultValue(16.0F)
+            .setMin(0.0F)
             .setSaveConsumer(value -> {
-                BoringTweaksConfigPojo.valuesGroup.smoothDayCycleMultiplier = value;
+                BoringTweaksConfigPojo.valuesGroup.smoothDayCycleDivisor = value;
             })
-            .setTooltip(new TranslatableText("config.boringtweaks.smooth_day_cycle_multiplier.tooltip"))
+            .setTooltip(new TranslatableText("config.boringtweaks.smooth_day_cycle_divisor.tooltip"))
             .build()
         );
 
         values.addEntry(entryBuilder.startFloatField(new TranslatableText("config.boringtweaks.baby_villager_head_scale"), BoringTweaksConfigPojo.valuesGroup.babyVillagerHeadScale)
             .setDefaultValue(1.75F)
+            .setMin(0.0F)
+            .setMax(32.0F)
             .setSaveConsumer(value -> {
                 BoringTweaksConfigPojo.valuesGroup.babyVillagerHeadScale = value;
             })
@@ -124,6 +128,7 @@ public class BoringTweaksConfigScreen {
 
         values.addEntry(entryBuilder.startFloatField(new TranslatableText("config.boringtweaks.noisy_sound_slider_steps"), BoringTweaksConfigPojo.valuesGroup.noisySoundSliderSteps)
             .setDefaultValue(10.0F)
+            .setMin(0.0F)
             .setSaveConsumer(value -> {
                 BoringTweaksConfigPojo.valuesGroup.noisySoundSliderSteps = value;
             })

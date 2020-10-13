@@ -58,6 +58,6 @@ public class WorldRendererMixin {
 		float angle = 1.0F;
 		angle = this.world.getDimension().getSkyAngle(this.world.getLunarTime());
 		this.lastSkyAngle = this.skyAngle;
-		this.skyAngle += (angle - this.skyAngle) * BoringTweaksConfigPojo.valuesGroup.smoothDayCycleMultiplier;
+		this.skyAngle += (angle - this.skyAngle) / BoringTweaksConfigPojo.valuesGroup.smoothDayCycleDivisor;
 	}
 }

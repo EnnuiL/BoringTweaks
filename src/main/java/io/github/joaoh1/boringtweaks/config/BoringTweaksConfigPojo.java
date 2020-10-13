@@ -37,15 +37,19 @@ public class BoringTweaksConfigPojo {
 	public static ValuesGroup valuesGroup = new ValuesGroup();
 
 	public static class ValuesGroup {
+		@Setting.Constrain.Range(min = 0.0F)
 		@Setting(comment = "The percentage applied by the \"Reduce Volume While Away\" tweak")
 		public float reducedVolumePercentage = 50.0F;
 
-		@Setting(comment = "The multiplier used by the \"Smooth Day Cycle\" tweak")
-		public float smoothDayCycleMultiplier = 0.0625F;
+		@Setting.Constrain.Range(min = 0.0F)
+		@Setting(comment = "The divisor used by the \"Smooth Day Cycle\" tweak")
+		public float smoothDayCycleDivisor = 16.0F;
 
+		@Setting.Constrain.Range(min = 0.0F, max = 32.0F)
 		@Setting(comment = "The scale used by the \"Bigger Baby Villager Heads\" tweak")
 		public float babyVillagerHeadScale = 1.75F;
 
+		@Setting.Constrain.Range(min = 0.0F)
 		@Setting(comment = "Used by \"Noisy Sound Slider\" to reduce noise")
 		public float noisySoundSliderSteps = 10.0F;
 	}
