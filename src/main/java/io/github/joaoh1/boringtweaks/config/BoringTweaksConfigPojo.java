@@ -45,12 +45,12 @@ public class BoringTweaksConfigPojo {
 		@Setting(comment = "The divisor used by the \"Smooth Day Cycle\" tweak")
 		public float smoothDayCycleDivisor = 32.0F;
 
-		@Setting.Constrain.Range(min = 0.0F, max = 32.0F)
-		@Setting(comment = "The scale used by the \"Bigger Baby Villager Heads\" tweak")
-		public float babyVillagerHeadScale = 1.75F;
-
 		@Setting.Constrain.Range(min = 0.0F)
 		@Setting(comment = "Used by \"Noisy Sound Slider\" to reduce noise")
 		public float noisySoundSliderSteps = 10.0F;
+
+		@Setting.Constrain.Range(min = 0.0F, max = 32.0F)
+		@Setting(comment = "The scale used by the \"Bigger Baby Villager Heads\" tweak")
+		public float babyVillagerHeadScale = 1.75F;
 	}
 }

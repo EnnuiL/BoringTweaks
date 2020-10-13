@@ -115,6 +115,16 @@ public class BoringTweaksConfigScreen {
             .build()
         );
 
+        values.addEntry(entryBuilder.startFloatField(new TranslatableText("config.boringtweaks.noisy_sound_slider_steps"), BoringTweaksConfigPojo.valuesGroup.noisySoundSliderSteps)
+            .setDefaultValue(10.0F)
+            .setMin(0.0F)
+            .setSaveConsumer(value -> {
+                BoringTweaksConfigPojo.valuesGroup.noisySoundSliderSteps = value;
+            })
+            .setTooltip(new TranslatableText("config.boringtweaks.noisy_sound_slider_steps.tooltip"))
+            .build()
+        );
+
         values.addEntry(entryBuilder.startFloatField(new TranslatableText("config.boringtweaks.baby_villager_head_scale"), BoringTweaksConfigPojo.valuesGroup.babyVillagerHeadScale)
             .setDefaultValue(1.75F)
             .setMin(0.0F)
@@ -123,16 +133,6 @@ public class BoringTweaksConfigScreen {
                 BoringTweaksConfigPojo.valuesGroup.babyVillagerHeadScale = value;
             })
             .setTooltip(new TranslatableText("config.boringtweaks.baby_villager_head_scale.tooltip"))
-            .build()
-        );
-
-        values.addEntry(entryBuilder.startFloatField(new TranslatableText("config.boringtweaks.noisy_sound_slider_steps"), BoringTweaksConfigPojo.valuesGroup.noisySoundSliderSteps)
-            .setDefaultValue(10.0F)
-            .setMin(0.0F)
-            .setSaveConsumer(value -> {
-                BoringTweaksConfigPojo.valuesGroup.noisySoundSliderSteps = value;
-            })
-            .setTooltip(new TranslatableText("config.boringtweaks.noisy_sound_slider_steps.tooltip"))
             .build()
         );
 
