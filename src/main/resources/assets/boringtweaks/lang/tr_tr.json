@@ -14,7 +14,7 @@
     "config.boringtweaks.fix_baby_hat_layer": "Bebek Şapka Katmanını Düzelt",
     "config.boringtweaks.fix_baby_hat_layer.tooltip": "İki ayaklı bebeklerin şapka katmanını düzeltir",
     "config.boringtweaks.shadowed_debug_hud": "Gölgeli Hata Ayıklama HUD'u",
-    "config.boringtweaks.shadowed_debug_hud.tooltip": "Hata Ayıklama HUD'undaki metne gölge ekler",
+    "config.boringtweaks.shadowed_debug_hud.tooltip": "Hata Ayıklama HUD'undaki metne gölge ekler (OptiFine ile uyumsuz)",
     "config.boringtweaks.strider_easter_egg": "Lavgezer Easter Egg'i",
     "config.boringtweaks.strider_easter_egg.tooltip": "Lavgezer Easter Egg'ini etkinleştirir.",
     "config.boringtweaks.category.values": "Değerler",

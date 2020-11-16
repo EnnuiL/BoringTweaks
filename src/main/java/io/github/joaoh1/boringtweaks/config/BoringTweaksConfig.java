@@ -24,7 +24,7 @@ public class BoringTweaksConfig {
 		.applyFromPojo(POJO, ANNOTATED_SETTINGS)
 		.build();
 	
-	private static JanksonValueSerializer serializer = new JanksonValueSerializer(false);
+	private static final JanksonValueSerializer serializer = new JanksonValueSerializer(false);
 
 	public static void loadModConfig() {
 		if (Files.exists(CONFIG_PATH)) {

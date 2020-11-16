@@ -14,7 +14,7 @@
     "config.boringtweaks.fix_baby_hat_layer": "Fix Baby Hat Layer",
     "config.boringtweaks.fix_baby_hat_layer.tooltip": "Fixes the hat layer of baby bipeds",
     "config.boringtweaks.shadowed_debug_hud": "Shadowed Debug HUD",
-    "config.boringtweaks.shadowed_debug_hud.tooltip": "Adds shadows on the debug HUD's text",
+    "config.boringtweaks.shadowed_debug_hud.tooltip": "Adds shadows on the debug HUD's text (Incompatible with OptiFine)",
     "config.boringtweaks.strider_easter_egg": "Strider Easter Egg",
     "config.boringtweaks.strider_easter_egg.tooltip": "Enables the Strider easter egg",
     "config.boringtweaks.category.values": "Values",

@@ -26,7 +26,7 @@ public class BoringTweaksConfigPojo {
 		@Setting(comment = "Fixes baby biped's hat layer")
 		public boolean fixBabyHatLayer = true;
 
-		@Setting(comment = "Adds shadows on the debug HUD's text")
+		@Setting(comment = "Adds shadows on the debug HUD's text (incompatible with OpfiFine)")
 		public boolean shadowedDebugHud = false;
 
 		@Setting(comment = "Enables the Strider easter egg")

@@ -2,6 +2,7 @@
   "required": true,
   "package": "io.github.joaoh1.boringtweaks.mixin",
   "compatibilityLevel": "JAVA_8",
+  "plugin": "io.github.joaoh1.boringtweaks.BoringTweaksPlugin",
   "client": [
     "BipedEntityModelMixin",
     "DebugHudMixin",

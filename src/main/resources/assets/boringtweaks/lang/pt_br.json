@@ -14,7 +14,7 @@
     "config.boringtweaks.fix_baby_hat_layer": "Arrumar a camada de chapéu de bebês",
     "config.boringtweaks.fix_baby_hat_layer.tooltip": "Arruma a camada de chapéu de bebês bípedes",
     "config.boringtweaks.shadowed_debug_hud": "HUD de debug sombreado",
-    "config.boringtweaks.shadowed_debug_hud.tooltip": "Adiciona sombras no texto do HUD de debug",
+    "config.boringtweaks.shadowed_debug_hud.tooltip": "Adiciona sombras no texto do HUD de debug (Incompatível com OptiFine)",
     "config.boringtweaks.strider_easter_egg": "Easter egg dos andarilhos",
     "config.boringtweaks.strider_easter_egg.tooltip": "Adiciona um easter egg para os andarilhos",
     "config.boringtweaks.category.values": "Valores",
