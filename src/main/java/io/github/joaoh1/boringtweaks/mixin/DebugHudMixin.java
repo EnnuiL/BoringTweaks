@@ -31,9 +31,10 @@ public class DebugHudMixin {
             "renderRightText"
         },
         locals = LocalCapture.CAPTURE_FAILHARD,
-        cancellable = true
+        // Set "require" to 0 in order to stop OptiFine from crashing
+        require = 0
     )
-    private void renderLeftText(MatrixStack matrices, CallbackInfo ci, List<String> list, int i, String string, int j, int k, int l, int m) {
+    private void renderShadowedDebugText(MatrixStack matrices, CallbackInfo ci, List<String> list, int i, String string, int j, int k, int l, int m) {
         if (BoringTweaksConfigPojo.featuresGroup.shadowedDebugHud) {
             String id = ci.getId();
             if (id.equals("renderLeftText")) {
