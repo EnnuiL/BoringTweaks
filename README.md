@@ -13,4 +13,4 @@ This mod is available for download on the following services:
 
 ## License
 
-This mod is licensed under the MIT license. You can freely include the mod on any modpack with no permission. Use of this mod's code on other projects is allowed as long as attribution is given.
+This mod is licensed under the MIT license. You can freely include the mod on any modpack with no permission. Usage of this mod's code on other projects is allowed as long as attribution is given.
